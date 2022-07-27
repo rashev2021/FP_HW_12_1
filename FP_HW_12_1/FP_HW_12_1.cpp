@@ -3,11 +3,21 @@
 
 using namespace std;
 
-void God(int a, int b) {
+void God(int arr1[]) {
+	int a = 0, a1 = 0;
+	int b = 0, b1 =0;
 
-	if (a && b == 29) {
+	a = arr1[0];
+	a1 = arr1[1];
+	b = arr1[3];
+	b1 = arr1[4];
+
+	if (a == 29 && a1 == 2) {
 		cout << endl << " Год високосный";
-	}		
+	}
+	if (b == 29 && b1 == 2) {
+		cout << endl << " Год високосный";
+	}
 	else {
 		cout << endl << " Год не високосный";
 	}
@@ -21,16 +31,21 @@ void Arr(int arr[]) {
 
 	cout << endl;
 	for (int i = 0; i < 6; i++) {
-		cout << " " << "[" << arr[i] << "]" << " ";
+		cout << " " << arr[i] << "." << " ";
 	}
 	cout << endl;
 	dey1 = arr[0];
 	dey2 = arr[3];
 
-	rasnost = dey1 - dey2;
+	if (dey1 < dey2) {
+		rasnost = dey2 - dey1;
+	}
+	else {
+		rasnost = dey1 - dey2;
+	}
 
 	cout << endl << " Разность в днях состовляет: " << rasnost  << " дней" << endl;
-	God(dey1, dey2);
+	God(arr);
 
 	
 }
@@ -67,7 +82,7 @@ int main()
 	//Задание 1
 	/*
 	const int size = 6;
-	int arr[size] = {17,7,87,12,4,88};
+	int arr[size] = {17,3,87,9,2,88};
 	Arr(arr);*/
 
 	//Заданиие 2
